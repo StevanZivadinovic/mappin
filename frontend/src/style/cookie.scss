@@ -1,0 +1,20 @@
+.cookie-notification{
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    width: 30%;
+    font-size: .8rem;
+    background-color: #F5DEB3;
+    padding: 1rem;
+    border-radius: .3rem;
+    .cookie-notification-buttons{
+        margin-top: .3rem;
+        button{
+            border: none;
+            margin-right: 1rem;
+            padding: .3rem;
+            cursor: pointer;
+        }
+    }
+}

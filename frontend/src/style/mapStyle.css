@@ -1,0 +1,130 @@
+@import url("./navbar.scss");
+.mapStyle {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.card {
+  z-index: 100;
+  width: 250px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card label {
+  width: -moz-max-content;
+  width: max-content;
+  color: tomato;
+  font-size: 13px;
+  border-bottom: 0.5px solid tomato;
+  margin: 3px 0;
+}
+.card .desc {
+  font-size: 14px;
+  margin: 2px 0px;
+}
+.card .stars .star {
+  color: gold;
+}
+
+.leaflet-popup .leaflet-popup-content-wrapper .leaflet-popup-content .newMarkerForm {
+  display: flex;
+  flex-direction: column;
+  color: tomato;
+}
+
+.registerFormContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  padding: 2rem;
+  background-color: tomato;
+  border-radius: 1rem;
+  width: 20%;
+  min-width: 100px;
+}
+
+.registerForm {
+  position: relative;
+}
+.registerForm .cancelBtn {
+  position: absolute;
+  right: -25px;
+  top: -25px;
+  cursor: pointer;
+}
+.registerForm .logo {
+  text-align: center;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.registerForm .logo img {
+  height: 30px;
+  margin-right: 0.5rem;
+}
+.registerForm .logo span {
+  align-self: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 18px;
+}
+.registerForm div input {
+  position: relative;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid rgb(245, 245, 3);
+  transition: border-bottom 0.1s ease;
+}
+.registerForm div input:focus {
+  border-bottom: 3px solid rgb(245, 245, 3);
+  offset: none;
+  outline: none;
+}
+.registerForm button {
+  width: 100%;
+  background-color: orange;
+  border: none;
+  border-radius: 0.3rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  padding: 0.3rem 0rem;
+}
+.registerForm button:hover {
+  background-color: rgb(249, 232, 3);
+  cursor: pointer;
+}
+.registerForm .errMsgRegister {
+  color: rgb(247, 251, 3);
+  font-size: 10px;
+}
+.registerForm .errMsgRegisterBigError {
+  color: rgb(247, 251, 3);
+  text-decoration: underline;
+}
+.registerForm .successMsgRegister {
+  color: green;
+  text-align: center;
+}
+.registerForm .linkToSignin, .registerForm .linkToLogin {
+  font-size: 10px;
+  text-align: right;
+  margin-top: 8px;
+}
+.registerForm .linkToSignin span, .registerForm .linkToLogin span {
+  font-weight: 600;
+  cursor: pointer;
+}
+.registerForm .linkToSignin span:hover, .registerForm .linkToLogin span:hover {
+  color: orange;
+}/*# sourceMappingURL=mapStyle.css.map */

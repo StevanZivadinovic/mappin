@@ -1,0 +1,13 @@
+{
+    "pin_deleted_successfully":"Маркер је успешно избрисан!",
+    "pin_not_found":"Маркер не постоји!",
+    "failed_to_retrieve_pins":"Не можемо да нађемо маркере!",
+    "already_in_use":"Већ постоји!",
+    "user_registered_successfully":"Корисник је успешно регистрован!",
+    "user_not_found":"Корисник није пронађен!",
+    "wrong_username_or_password":"Погрешно корисничко име или лозинка!",
+    "user_logged_in_successfully":"Корисник је успешно пријављен!",
+    "user_logged_out_successfully":"Корисник је успешно одјављен!",
+    "user_is_not_logged_in":"Корисник није пријављен!",
+    "user_already_exist":"Корисник већ постоји!"
+}

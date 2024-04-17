@@ -1,0 +1,14 @@
+{
+    "pin_deleted_successfully":"Pin deleted successfully!",
+    "pin_not_found":"Pin not found",
+    "failed_to_retrieve_pins":"Failed to retrieve pins",
+    "already_in_use":"Already in use!",
+    "user_registered_successfully":"User registered successfully!",
+    "user_not_found":"User not found!",
+    "wrong_username_or_password":"Wrong username or password!",
+    "user_logged_in_successfully":"User logged in successfully",
+    "user_logged_out_successfully":"User logged out successfully",
+    "user_is_not_logged_in":"User is not logged in",
+    "user_already_exist":"User already exist!"
+
+}

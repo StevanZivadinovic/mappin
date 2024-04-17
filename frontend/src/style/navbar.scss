@@ -1,0 +1,105 @@
+.navbar {
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+  right: 0;
+  padding: 0.3rem;
+  padding-left: 3rem;
+  div.username {
+    align-self: center;
+    display: flex;
+    height: 100%;
+    margin-right: 2rem;
+    font-style: italic;
+    span {
+      display: inline-block;
+      margin-right: 0.3rem;
+    }
+  }
+  .unregistered_user_btn {
+    .registerBtn {
+      border-bottom: 2px solid transparent;
+      color: #2e8b57;
+      &:hover {
+        border-bottom: 2px solid #2e8b57;
+      }
+    }
+    .loginBtn {
+      border-bottom: 2px solid transparent;
+      color: #4682b4;
+      &:hover {
+        border-bottom: 2px solid #4682b4;
+      }
+    }
+  }
+  .registered_user_btn {
+    .logoutBtn {
+      font-size: 0.8rem;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        border-bottom: 2px solid #f5deb3;
+      }
+    }
+    .tableLink {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      margin-right: 0.2rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      color: #a6dde3;
+      &:hover {
+        border-bottom: 2px solid #a6dde3;
+      }
+    }
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    color: #f5deb3;
+  }
+  .languageSelect {
+    background-color: transparent;
+    border: none;
+    offset: none;
+    border-radius: 0.5rem;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    font-size: 0.8rem;
+    option{
+        font-size: 0.8rem;
+        background-color: rgb(92, 152, 50);
+        cursor: pointer;
+    }
+  }
+}
+
+.userNotLogged {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #f5deb3 20%,
+    #ddb770 100%,
+    transparent 100%
+  );
+}
+.userLogged {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgb(92, 152, 50) 20%,
+    rgb(92, 152, 50) 100%,
+    transparent 100%
+  );
+}
+
+.userLoggedBtnStyle {
+  cursor: pointer !important;
+}
+.userNotLoggedBtnStyle {
+  cursor: not-allowed !important;
+}
