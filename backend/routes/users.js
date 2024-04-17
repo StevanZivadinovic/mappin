@@ -2,7 +2,7 @@
 const usersRoutes = require('express').Router();
 const { handleErrors } = require('../hlperFunctions/helperFunctions.js');
 const { requireAuth } = require('../middleware/authMiddleware.js');
-const User = require('../models/User.ts');
+const User = require('../models/User.js');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 

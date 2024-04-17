@@ -33,9 +33,8 @@ i18next
 app.use(i18nextMiddleware.handle(i18next));
 app.use(cookieParser());
 app.use(cors({
-  origin:'react-js-and-vue-js-api.vercel.app',
-  methods:['POST', "GET"],
-  credentials:true
+  origin:['http://localhost:3000','https://mappin-4.onrender.com/']
+ 
 }));
 dotenv.config();
 app.use(express.json())
