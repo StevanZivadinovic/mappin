@@ -16,7 +16,7 @@ const app=express();
 app.use(
   cors({
     // origin: ['http://localhost:3000', 'https://mappin-fe.onrender.com'],
-    origin:'http://localhost:3000',
+    origin:'https://mappin-fe.onrender.com',
     credentials: true,
   })
 );
