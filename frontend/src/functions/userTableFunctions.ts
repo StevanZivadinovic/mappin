@@ -4,11 +4,12 @@ interface pinsObjectType{
     pinsCount:number
     }
 export const getPinsPerUser = (setUsersPins:Dispatch<SetStateAction<pinsObjectType[]>>)=>{
-    fetch('/api/pins/pins_per_user')
+    fetch(`${process.env.REACT_APP_SERVER_URL}/api/pins/pins_per_user`)
     .then((data)=>{
         return data.json()
     })
     .then((data)=>{
+        console.log(data)
         if(data.pinsPerUser.length>0 && data.isLoggedIn===true){
             setUsersPins(data.pinsPerUser)
         }

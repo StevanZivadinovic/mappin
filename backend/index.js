@@ -12,6 +12,13 @@ const Backend = require('i18next-fs-backend'); // File system backend
 const { checkUser } = require('./middleware/authMiddleware.js');
 const app=express();
 
+// Set up CORS with credentials
+app.use(
+  cors({
+    origin: ['http://localhost:3000', 'https://mappin-fe.onrender.com/'],
+    credentials: true,
+  })
+);
 
 i18next
   .use(Backend)
@@ -32,10 +39,8 @@ i18next
   });
 app.use(i18nextMiddleware.handle(i18next));
 app.use(cookieParser());
-app.use(cors({
-  origin:['http://localhost:3000','https://mappin-fe.onrender.com/']
- 
-}));
+
+
 dotenv.config();
 app.use(express.json())
 mongoose.connect(process.env.MONGO_URL)
@@ -44,6 +49,7 @@ mongoose.connect(process.env.MONGO_URL)
 }).catch((err)=>{
     console.log(err ,'err');
 })
+
 
 app.use('/',languageRoutes)
 app.use('/api/pins',pinsRoutes)
