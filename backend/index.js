@@ -33,7 +33,7 @@ i18next
 app.use(i18nextMiddleware.handle(i18next));
 app.use(cookieParser());
 app.use(cors({
-  origin:['http://localhost:3000','https://mappin-4.onrender.com/']
+  origin:['http://localhost:3000','https://mappin-fe.onrender.com/']
  
 }));
 dotenv.config();
