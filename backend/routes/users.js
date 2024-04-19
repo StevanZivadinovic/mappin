@@ -62,7 +62,7 @@ usersRoutes.post('/register_new_user', async (req, res) => {
   }
 });
 
-usersRoutes.post(`${process.env.REACT_APP_SERVER_URL}/login`, (req, res) => {
+usersRoutes.post('/login', (req, res) => {
   console.log(req.body)
   User.findOne({ username: req.body.username })
     .then((data) => {
