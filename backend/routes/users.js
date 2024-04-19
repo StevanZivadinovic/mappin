@@ -63,6 +63,7 @@ usersRoutes.post('/register_new_user', async (req, res) => {
 });
 
 usersRoutes.post('/login', (req, res) => {
+  console.log(req.body)
   User.findOne({ username: req.body.username })
     .then((data) => {
       console.log(data)
@@ -71,7 +72,6 @@ usersRoutes.post('/login', (req, res) => {
           { message: req.t('user_not_found') },
           req.t
         );
-        console.log(req.t('user_not_found'));
         return res.status(400).json(errors);
       }
       const validPassword = bcrypt.compareSync(
@@ -105,10 +105,10 @@ usersRoutes.post('/login', (req, res) => {
     })
     .catch((err) => {
       const errors = handleErrors(err, req.t);
-      res.status(500).json({ errors, loggedIn: false });
+      console.log('haj')
+      res.status(500).json({ errors, loggedIn: false, token:'sadsd' });
     });
 });
-
 usersRoutes.get('/logout', (req, res) => {
   res.clearCookie('jwt', { httpOnly: true, maxAge: 0 });
   res

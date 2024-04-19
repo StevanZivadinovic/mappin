@@ -97,6 +97,7 @@ export const handleSubmitLogin = (
       return res.json();
     })
     .then((data) => {
+      console.log(data)
       if (!data.user) {
         setErrLoggin({ display: true, msg: data });
       } else {
