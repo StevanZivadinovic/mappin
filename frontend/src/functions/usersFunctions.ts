@@ -121,6 +121,7 @@ export const getLoggedUserFunc=(setIsUserLoggedIn,setLoggedUserUsername,setIniti
     return data.json();
   })
   .then((data) => {
+    console.log(data)
     if (data.user !== null) {
       setIsUserLoggedIn(data.loggedIn);
       setLoggedUserUsername(data.user.username);
