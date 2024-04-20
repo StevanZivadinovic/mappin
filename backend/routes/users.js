@@ -10,15 +10,7 @@ const jwtSecret = process.env.JWT_SECRET;
 const createToken = (id) => {
   return jwt.sign({ id }, jwtSecret, {
     expiresIn: maxAge,
-    // Note: The cookie option should be provided separately, not inside jwt.sign options
-    // Set the attributes of the cookie
-    cookie: {
-      secure: true, // Set to 'true' in production for HTTPS connections
-      sameSite: 'None', // Set to 'None' for cross-site requests
-      httpOnly: true, // Set to 'true' to prevent client-side JavaScript from accessing the cookie
-      domain: '.onrender.com', // Set the 'Domain' attribute to '.onrender.com' for cross-subdomain cookies
-      path: '/', // Set the 'Path' attribute to '/' to make the cookie valid for all paths
-    }
+  
   });
 };
 
