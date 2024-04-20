@@ -29,5 +29,10 @@
     "nodemon": "^3.1.0",
     "react-i18next": "^14.1.0",
     "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6"
   }
 }
