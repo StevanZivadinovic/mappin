@@ -113,6 +113,7 @@ usersRoutes.get('/logout', (req, res) => {
 });
 
 usersRoutes.get('/', requireAuth, (req, res) => {
+  console.log(res.user)
   if (res.loggedIn) {
     res
       .status(200)
