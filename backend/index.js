@@ -47,7 +47,7 @@ dotenv.config();
 app.use(express.json())
 mongoose.connect(process.env.MONGO_URL)
 .then((res)=>{
-    app.listen(8800)
+    app.listen('https://mappin-api-2.onrender.com/')
 }).catch((err)=>{
     console.log(err ,'err');
 })
