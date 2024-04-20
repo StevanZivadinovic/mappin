@@ -40,7 +40,7 @@ i18next
     }
   });
 app.use(i18nextMiddleware.handle(i18next));
-app.use(cookieParser(process.env.JWT_SECRET));
+app.use(cookieParser());
 
 
 dotenv.config();
