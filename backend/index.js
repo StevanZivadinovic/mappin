@@ -40,7 +40,7 @@ i18next
     }
   });
 app.use(i18nextMiddleware.handle(i18next));
-app.use(cookieParser());
+app.use(cookieParser(process.env.JWT_SECRET));
 
 
 dotenv.config();
@@ -52,7 +52,6 @@ mongoose.connect(process.env.MONGO_URL)
     console.log(err ,'err');
 })
 
-app.use('/', express.static('/build'))
 app.use('/',languageRoutes)
 app.use('/api/pins',pinsRoutes)
 app.use('/api/users',checkUser,usersRoutes)
