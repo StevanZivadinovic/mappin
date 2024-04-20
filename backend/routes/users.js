@@ -37,7 +37,7 @@ usersRoutes.post('/register_new_user', async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: 'None',
-      domain: '.mappin-fe.onrender.com', // Adjust the domain as needed
+      domain: 'mappin-api-2.onrender.com', // Adjust the domain as needed
       path: '/', // Adjust the path as needed
       maxAge: maxAge
      });
@@ -83,11 +83,11 @@ usersRoutes.post('/login', (req, res) => {
       }
       const token = createToken(data._id);
       res.cookie('jwt', token, { 
-        // httpOnly: true,
-        // secure: true,
-        // sameSite: 'None',
-        // domain: 'mappin-api-2.onrender.com', // Adjust the domain as needed
-        // path: '/', // Adjust the path as needed
+        httpOnly: true,
+        secure: true,
+        sameSite: 'None',
+        domain: 'mappin-api-2.onrender.com', // Adjust the domain as needed
+        path: '/', // Adjust the path as needed
         maxAge: maxAge
       });
      return res
