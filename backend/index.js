@@ -12,7 +12,7 @@ const i18nextMiddleware = require('i18next-http-middleware');
 const Backend = require('i18next-fs-backend'); // File system backend
 const { checkUser } = require('./middleware/authMiddleware.js');
 const app=express();
-app.use(express.static(path.join(__dirname, 'build')));
+
 // Set up CORS with credentials
 app.use(
   cors({
@@ -52,7 +52,7 @@ mongoose.connect(process.env.MONGO_URL)
     console.log(err ,'err');
 })
 
-
+app.use('/', express.static('/build'))
 app.use('/',languageRoutes)
 app.use('/api/pins',pinsRoutes)
 app.use('/api/users',checkUser,usersRoutes)
