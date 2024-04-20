@@ -16,7 +16,7 @@ const createToken = (id) => {
       secure: true, // Set to 'true' in production for HTTPS connections
       sameSite: 'None', // Set to 'None' for cross-site requests
       httpOnly: true, // Set to 'true' to prevent client-side JavaScript from accessing the cookie
-      domain: '', // Set the 'Domain' attribute to '.onrender.com' for cross-subdomain cookies
+      domain: '.onrender.com', // Set the 'Domain' attribute to '.onrender.com' for cross-subdomain cookies
       path: '/', // Set the 'Path' attribute to '/' to make the cookie valid for all paths
     }
   });
@@ -45,7 +45,7 @@ usersRoutes.post('/register_new_user', async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: 'None',
-      domain: '', // Adjust the domain as needed
+      domain: '.onrender.com', // Adjust the domain as needed
       path: '/', // Adjust the path as needed
       maxAge: maxAge
      });
@@ -91,7 +91,7 @@ usersRoutes.post('/login', (req, res) => {
         httpOnly: true,
         secure: true,
         sameSite: 'None',
-        domain: '', // Adjust the domain as needed
+        domain: '.onrender.com', // Adjust the domain as needed
         path: '/', // Adjust the path as needed
         maxAge: maxAge
       });
