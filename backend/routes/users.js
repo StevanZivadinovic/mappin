@@ -6,8 +6,9 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const maxAge = 3 * 24 * 60 * 60 * 1000;
+const jwtSecret = process.env.JWT_SECRET;
 const createToken = (id) => {
-  return jwt.sign({ id }, 'sycret text of mine', {
+  return jwt.sign({ id }, jwtSecret, {
     expiresIn: maxAge,
     // Note: The cookie option should be provided separately, not inside jwt.sign options
     // Set the attributes of the cookie
@@ -15,7 +16,7 @@ const createToken = (id) => {
       secure: true, // Set to 'true' in production for HTTPS connections
       sameSite: 'None', // Set to 'None' for cross-site requests
       httpOnly: true, // Set to 'true' to prevent client-side JavaScript from accessing the cookie
-      domain: '.mappin-api-2.onrender.com', // Set the 'Domain' attribute to '.onrender.com' for cross-subdomain cookies
+      domain: '', // Set the 'Domain' attribute to '.onrender.com' for cross-subdomain cookies
       path: '/', // Set the 'Path' attribute to '/' to make the cookie valid for all paths
     }
   });
@@ -44,7 +45,7 @@ usersRoutes.post('/register_new_user', async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: 'None',
-      domain: '.mappin-api-2.onrender.com', // Adjust the domain as needed
+      domain: '', // Adjust the domain as needed
       path: '/', // Adjust the path as needed
       maxAge: maxAge
      });
@@ -66,7 +67,7 @@ usersRoutes.post('/login', (req, res) => {
   console.log(req.body)
   User.findOne({ username: req.body.username })
     .then((data) => {
-      console.log(data)
+      console.log(data, 'moze')
       if (!data) {
         const errors = handleErrors(
           { message: req.t('user_not_found') },
@@ -90,7 +91,7 @@ usersRoutes.post('/login', (req, res) => {
         httpOnly: true,
         secure: true,
         sameSite: 'None',
-        domain: '.mappin-api-2.onrender.com', // Adjust the domain as needed
+        domain: '', // Adjust the domain as needed
         path: '/', // Adjust the path as needed
         maxAge: maxAge
       });
