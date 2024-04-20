@@ -1,7 +1,7 @@
 
 // Example function to set the language on the backend
 export const setLanguageOnBackend = (language) => {
-  fetch(`${process.env.REACT_APP_SERVER_URL}/set_language`, {
+  fetch(`/set_language`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
