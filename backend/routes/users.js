@@ -41,6 +41,7 @@ usersRoutes.post('/register_new_user', async (req, res) => {
       path: '/', // Adjust the path as needed
       maxAge: maxAge
      });
+     
     return res
       .status(200)
       .json({
@@ -50,6 +51,7 @@ usersRoutes.post('/register_new_user', async (req, res) => {
         loggedIn: true,
       });
   } catch (err) {
+    console.log(err)
     const errors = handleErrors(err, req.t);
     return res.status(400).json(errors);
   }
@@ -88,7 +90,7 @@ usersRoutes.post('/login', (req, res) => {
         path: '/', // Adjust the path as needed
         maxAge: maxAge
       });
-      res
+     return res
         .status(200)
         .json({
           message: req.t('user_logged_in_successfully'),
