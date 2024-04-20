@@ -107,7 +107,7 @@ usersRoutes.post('/login', (req, res) => {
     })
     .catch((err) => {
       const errors = handleErrors(err, req.t);
-      console.log('haj')
+      console.log('haj',err)
       res.status(500).json({ errors, loggedIn: false, token:'sadsd' });
     });
 });
