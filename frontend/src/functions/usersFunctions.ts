@@ -16,7 +16,7 @@ export const handleSubmitRegister = (
     password,
   };
 
-  fetch(`/api/users/register_new_user`, {
+  fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/register_new_user`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -48,7 +48,7 @@ export const handleSubmitRegister = (
 
 export const handleLogout = (setDisplayBtns, setIsUserLoggedIn, setPopupOpen,setLoggedUserUsername, setLoggedUserEmail,t) => {
   if (window.confirm(capitalizeFirstLetter(t('logout_msg')))) {
-    fetch(`/api/users/logout`)
+    fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/logout`)
       .then((data) => {
         return data.json()
       })
@@ -83,7 +83,7 @@ export const handleSubmitLogin = (
     password,
   };
   console.log(`${process.env.REACT_APP_SERVER_URL}/api/users/login`)
-  fetch(`/api/users/login`, {
+  fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -116,7 +116,7 @@ export const handleSubmitLogin = (
 
 
 export const getLoggedUserFunc=(setIsUserLoggedIn,setLoggedUserUsername,setInitialLoggedUserEmail, setAcceptedCookies)=>{
-  fetch(`/api/users/`)
+  fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/`)
   .then((data) => {
     return data.json();
   })

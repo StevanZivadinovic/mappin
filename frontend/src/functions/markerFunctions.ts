@@ -61,7 +61,7 @@ export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfC
   localStorage.setItem("lastClickedMarker", String(pointsArray.length));
 
   try {
-    const response = await fetch(`/api/pins/create`, {
+    const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/pins/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -104,7 +104,7 @@ export const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTe
 };
 
 export const getAllPins = (setPoints)=>{
-  fetch(`/api/pins/get_pins`)
+  fetch(`${process.env.REACT_APP_SERVER_URL}/api/pins/get_pins`)
   .then((data) => {
     return data.json();
   })
@@ -118,7 +118,7 @@ export const getAllPins = (setPoints)=>{
 }
 export const deletePoint = (e,id, setPointDeleted,t)=>{
   if(window.confirm("Are you sure you want to delete point?")){
-    fetch(`/api/pins/delete_pin/${id}`, {
+    fetch(`${process.env.REACT_APP_SERVER_URL}/api/pins/delete_pin/${id}`, {
       method: 'DELETE' 
     })
     .then((data)=>{
