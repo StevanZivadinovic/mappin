@@ -86,7 +86,7 @@ usersRoutes.post('/login', (req, res) => {
         httpOnly: true,
         secure: true,
         sameSite: 'None',
-        domain: '', // Adjust the domain as needed
+        domain: '.mappin-fe.onrender.com', // Adjust the domain as needed
         path: '/', // Adjust the path as needed
         maxAge: maxAge
       });
