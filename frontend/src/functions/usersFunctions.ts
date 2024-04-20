@@ -82,6 +82,7 @@ export const handleSubmitLogin = (
     username,
     password,
   };
+  console.log(`${process.env.REACT_APP_SERVER_URL}/api/users/login`)
   fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/login`, {
     method: "POST",
     headers: {
