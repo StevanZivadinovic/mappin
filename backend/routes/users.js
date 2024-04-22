@@ -58,7 +58,7 @@ usersRoutes.post('/register_new_user', async (req, res) => {
 });
 
 usersRoutes.post('/login', (req, res) => {
-  console.log(req.body)
+  // console.log(req.body)
   User.findOne({ username: req.body.username })
     .then((data) => {
       console.log(data, 'moze')
