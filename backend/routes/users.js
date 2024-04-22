@@ -113,23 +113,18 @@ usersRoutes.get('/logout', (req, res) => {
 });
 
 usersRoutes.get('/', requireAuth, (req, res) => {
-  console.log(res, 'haj haj')
-  if (res.loggedIn) {
-    res
-      .status(200)
-      .json({
-        message: req.t('user_logged_out_successfully'),
-        loggedIn: res.loggedIn,
-        user: res.user,
-      });
+  if (req.loggedIn) { // Access loggedIn status from req object
+    res.status(200).json({
+      message: req.t('user_logged_out_successfully'),
+      loggedIn: req.loggedIn,
+      user: res.user,
+    });
   } else {
-    res
-      .status(200)
-      .json({
-        message: req.t('user_is_not_logged_in'),
-        loggedIn: res.loggedIn,
-        user: res.user,
-      });
+    res.status(200).json({
+      message: req.t('user_is_not_logged_in'),
+      loggedIn: req.loggedIn,
+      user: res.user,
+    });
   }
 });
 
