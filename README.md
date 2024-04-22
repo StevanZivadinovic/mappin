@@ -5,3 +5,5 @@ For FE type in terminal:
 For BE:
 1) npm i
 2) npm run start
+
+Deployed on: https://mappin-fe.onrender.com/
