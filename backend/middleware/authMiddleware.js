@@ -4,20 +4,19 @@ const User = require('../models/User.js');
 const requireAuth = (req, res, next) => {
   const token = req.cookies.jwt;
   const jwtSecret = process.env.JWT_SECRET;
-  console.log('token',token);
   
   if (token) {
     jwt.verify(token, jwtSecret, (err, decodedToken) => {
       if (err) {
-        req.loggedIn = false; // Set loggedIn status on req object
+        req.loggedIn = false; 
         next();
       } else {
-        req.loggedIn = true; // Set loggedIn status on req object
+        req.loggedIn = true; 
         next();
       }
     });
   } else {
-    req.loggedIn = false; // Set loggedIn status on req object
+    req.loggedIn = false; 
     next();
   }
 };
