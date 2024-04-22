@@ -48,7 +48,13 @@ export const handleSubmitRegister = (
 
 export const handleLogout = (setDisplayBtns, setIsUserLoggedIn, setPopupOpen,setLoggedUserUsername, setLoggedUserEmail,t) => {
   if (window.confirm(capitalizeFirstLetter(t('logout_msg')))) {
-    fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/logout`)
+    fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/logout`,{
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include', 
+    })
       .then((data) => {
         return data.json()
       })
@@ -82,7 +88,6 @@ export const handleSubmitLogin = (
     username,
     password,
   };
-  console.log(`${process.env.REACT_APP_SERVER_URL}/api/users/login`)
   fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/login`, {
     method: "POST",
     headers: {
@@ -98,7 +103,6 @@ export const handleSubmitLogin = (
       return res.json();
     })
     .then((data) => {
-      console.log(data)
       if (!data.user) {
         setErrLoggin({ display: true, msg: data });
       } else {
@@ -127,7 +131,6 @@ export const getLoggedUserFunc=(setIsUserLoggedIn,setLoggedUserUsername,setIniti
     return data.json();
   })
   .then((data) => {
-    console.log(data)
     if (data.user !== null) {
       setIsUserLoggedIn(data.loggedIn);
       setLoggedUserUsername(data.user.username);

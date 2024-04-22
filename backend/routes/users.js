@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const maxAge = 3 * 24 * 60 * 60 * 1000;
-const jwtSecret = 'sycret text of mine';
+const jwtSecret = process.env.JWT_SECRET;
 const createToken = (id) => {
   return jwt.sign({ id }, jwtSecret, {
     expiresIn: maxAge,
@@ -51,17 +51,14 @@ usersRoutes.post('/register_new_user', async (req, res) => {
         loggedIn: true,
       });
   } catch (err) {
-    console.log(err)
     const errors = handleErrors(err, req.t);
     return res.status(400).json(errors);
   }
 });
 
 usersRoutes.post('/login', (req, res) => {
-  // console.log(req.body)
   User.findOne({ username: req.body.username })
     .then((data) => {
-      console.log(data, 'moze')
       if (!data) {
         const errors = handleErrors(
           { message: req.t('user_not_found') },
@@ -101,10 +98,10 @@ usersRoutes.post('/login', (req, res) => {
     })
     .catch((err) => {
       const errors = handleErrors(err, req.t);
-      console.log('haj',err)
       res.status(500).json({ errors, loggedIn: false, token:'sadsd' });
     });
 });
+
 usersRoutes.get('/logout', (req, res) => {
   res.clearCookie('jwt', { httpOnly: true, maxAge: 0 });
   res
@@ -113,7 +110,7 @@ usersRoutes.get('/logout', (req, res) => {
 });
 
 usersRoutes.get('/', requireAuth, (req, res) => {
-  if (req.loggedIn) { // Access loggedIn status from req object
+  if (req.loggedIn) { 
     res.status(200).json({
       message: req.t('user_logged_out_successfully'),
       loggedIn: req.loggedIn,
