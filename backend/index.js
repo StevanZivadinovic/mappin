@@ -53,5 +53,5 @@ mongoose.connect(process.env.MONGO_URL)
 })
 
 app.use('/',languageRoutes)
-app.use('/',pinsRoutes)
-app.use('/',checkUser,usersRoutes)
+app.use('/api/pins',pinsRoutes)
+app.use('/api/users',checkUser,usersRoutes)

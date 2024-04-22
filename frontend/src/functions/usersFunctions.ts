@@ -116,7 +116,13 @@ export const handleSubmitLogin = (
 
 
 export const getLoggedUserFunc=(setIsUserLoggedIn,setLoggedUserUsername,setInitialLoggedUserEmail, setAcceptedCookies)=>{
-  fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/`)
+  fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    credentials: 'include', 
+  })
   .then((data) => {
     return data.json();
   })
