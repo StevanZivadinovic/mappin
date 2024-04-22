@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const maxAge = 3 * 24 * 60 * 60 * 1000;
-const jwtSecret = process.env.JWT_SECRET;
+const jwtSecret = 'sycret text of mine';
 const createToken = (id) => {
   return jwt.sign({ id }, jwtSecret, {
     expiresIn: maxAge,
