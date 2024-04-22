@@ -37,8 +37,8 @@ usersRoutes.post('/register_new_user', async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: 'None',
-      domain: 'mappin-api-2.onrender.com', // Adjust the domain as needed
-      path: '/', // Adjust the path as needed
+      domain: 'mappin-api-2.onrender.com', 
+      path: '/', 
       maxAge: maxAge
      });
      
@@ -82,8 +82,8 @@ usersRoutes.post('/login', (req, res) => {
         httpOnly: true,
         secure: true,
         sameSite: 'None',
-        domain: 'mappin-api-2.onrender.com', // Adjust the domain as needed
-        path: '/', // Adjust the path as needed
+        domain: 'mappin-api-2.onrender.com', 
+        path: '/', 
         maxAge: maxAge
       });
      return res

@@ -1,6 +1,5 @@
 
-// Example function to set the language on the backend
-export const setLanguageOnBackend = (language) => {
+export const setLanguageOnBackend = (language:string) => {
   fetch(`${process.env.REACT_APP_SERVER_URL}/set_language`, {
     method: 'POST',
     headers: {
@@ -12,11 +11,9 @@ export const setLanguageOnBackend = (language) => {
       if (!response.ok) {
         throw new Error('Failed to set language');
       }
-      // Language set successfully
       console.log('Language set successfully');
     })
     .catch(error => {
-      // Handle error
       console.error('Error setting language:', error);
     });
 };

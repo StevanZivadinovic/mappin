@@ -15,7 +15,6 @@ export const getPinsPerUser = (setUsersPins:Dispatch<SetStateAction<pinsObjectTy
         return data.json()
     })
     .then((data)=>{
-        console.log(data)
         if(data.pinsPerUser.length>0 && data.isLoggedIn===true){
             setUsersPins(data.pinsPerUser)
         }
