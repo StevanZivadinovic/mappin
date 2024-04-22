@@ -4,7 +4,13 @@ interface pinsObjectType{
     pinsCount:number
     }
 export const getPinsPerUser = (setUsersPins:Dispatch<SetStateAction<pinsObjectType[]>>)=>{
-    fetch(`${process.env.REACT_APP_SERVER_URL}/api/pins/pins_per_user`)
+    fetch(`${process.env.REACT_APP_SERVER_URL}/api/pins/pins_per_user`,{
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include', 
+    })
     .then((data)=>{
         return data.json()
     })

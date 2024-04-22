@@ -16,11 +16,11 @@ const app=express();
 // Set up CORS with credentials
 app.use(
   cors({
-    // origin: ['http://localhost:3000', 'https://mappin-fe.onrender.com'],
-    origin:'https://mappin-fe.onrender.com',
+    origin: ['http://localhost:3000', 'https://mappin-fe.onrender.com', 'https://mappin-fe.onrender.com/table_of_users'],
     credentials: true,
   })
 );
+
 
 i18next
   .use(Backend)
