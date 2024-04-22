@@ -36,7 +36,7 @@ i18next
     if(err){
       console.log(err);
     }else{
-      console.log(t('user_not_found'))
+      console.log("server is running")
     }
   });
 app.use(i18nextMiddleware.handle(i18next));
