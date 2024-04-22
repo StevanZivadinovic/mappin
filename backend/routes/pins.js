@@ -52,6 +52,7 @@ pinsRoutes.get('/pins_per_user',requireAuth, async (req, res) => {
           $sort: { pinsCount: -1 }
         }
       ]);
+      console.log(res.loggedIn)
       res.status(200).json({pinsPerUser, isLoggedIn:res.loggedIn});
     } catch (error) {
       console.error(error);
