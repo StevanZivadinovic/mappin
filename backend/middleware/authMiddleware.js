@@ -4,7 +4,7 @@ const User = require('../models/User.js');
 const requireAuth = (req, res, next) => {
   const token = req.cookies.jwt;
   const jwtSecret = 'sycret text of mine';
-  console.log(token);
+  console.log('token',token);
   
   if (token) {
     jwt.verify(token, jwtSecret, (err, decodedToken) => {
