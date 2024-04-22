@@ -54,6 +54,7 @@
   "proxy": "http://localhost:8800",
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.0",
+    "@types/node": "^20.12.7",
     "sass": "^1.72.0"
   }
 }
