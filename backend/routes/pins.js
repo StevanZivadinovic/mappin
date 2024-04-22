@@ -55,7 +55,6 @@ pinsRoutes.get('/pins_per_user',requireAuth, async (req, res) => {
       console.log(res.loggedIn)
       res.status(200).json({pinsPerUser, isLoggedIn:res.loggedIn});
     } catch (error) {
-      console.error(error);
       res.status(500).json({ message: 'Internal server error' });
     }
   });

@@ -70,7 +70,6 @@ usersRoutes.post('/login', (req, res) => {
         req.body.password,
         data.password
       );
-      console.log(validPassword)
       if (!validPassword) {
         const errors = handleErrors(
           { message: req.t('wrong_username_or_password') },
