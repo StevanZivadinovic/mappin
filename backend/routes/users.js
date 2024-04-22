@@ -103,7 +103,15 @@ usersRoutes.post('/login', (req, res) => {
 });
 
 usersRoutes.get('/logout', (req, res) => {
-  res.clearCookie('jwt', { httpOnly: true, maxAge: 0 });
+  res.clearCookie('jwt', { 
+        httpOnly: true,
+        secure: true,
+        sameSite: 'None',
+        domain: 'mappin-api-2.onrender.com', 
+        path: '/',
+        maxAge:0
+  
+  });
   res
     .status(200)
     .json({ message: req.t('user_logged_out_successfully'), user: null });
