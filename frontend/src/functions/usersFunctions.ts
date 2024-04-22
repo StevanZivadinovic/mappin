@@ -22,6 +22,7 @@ export const handleSubmitRegister = (
       "Content-Type": "application/json",
     },
     body: JSON.stringify(newUserObject),
+    credentials: 'include',
   })
     .then((res) => {
       if (res.ok) {
